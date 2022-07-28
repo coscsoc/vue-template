@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./loading/loading.css">
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please
+        enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app">
+      <div class="d2-home">
+        <div class="d2-home__main">
+          <img class="d2-home__loading" src="./loading/loading-spin.svg" alt="loading" />
+          <div class="d2-home__title">正在加载资源</div>
+          <div class="d2-home__sub-title">初次加载资源可能需要较多时间 请耐心等待</div>
+        </div>
+        <div class="d2-home__footer">
+          <a href="https://github.com/d2-projects/d2-admin" target="_blank">
+            https://github.com/d2-projects/d2-admin
+          </a>
+        </div>
+      </div>
+    </div>
+    <% htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.forEach(cdn=>{ %>
+    <script src="<%= cdn%>"></script>
+    <% }) %>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
